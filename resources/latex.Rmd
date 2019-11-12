@@ -1,0 +1,136 @@
+---
+title: "LaTeX for Math Formatting"
+author: "Allison Theobold"
+date: "November 12, 2019"
+output:
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+  html_document:
+    df_print: paged
+header-includes: \usepackage{graphicx} \usepackage{amsmath} \usepackage{amssymb} \usepackage{color}
+  \usepackage{multicol}
+---
+
+# \LaTeX    in Statistical Reports  
+
+There are two main modes of typesetting math in \LaTeX, embedding the math directly by *encapsulating* it in *dollar signs*, or using a predefined *math environment*.
+
+
+## Inline Math  
+
+The use of `$` for inline math environments is common, but it is difficult for the computer to track a missing `$`. Therefore, I advocate for the use of the *displaymath* environment, using 
+\begin{verbatim} 
+\[
+math equation
+\] 
+\end{verbatim} for inline math environments.  
+
+\vspace{1cm}
+
+*Example:* 
+
+This formula 
+\begin{verbatim}
+$f(x) = x^2$
+\end{verbatim}
+is an example. 
+
+Or we could use,
+\begin{verbatim}
+\[ f(x) = x^2 \]
+\end{verbatim} 
+instead.
+
+\pagebreak
+
+## Equations and Align  
+
+Arguably the most useful *math environments* are the *equation environment* and the *align environment* for both single and multiple equations. 
+
+\vspace{1cm}
+
+\begin{verbatim}
+\begin{equation}
+  1 + 2 = 3 
+\end{equation}
+\end{verbatim}
+
+\begin{equation}
+  1 + 2 = 3 
+\end{equation}
+
+* This should produce a numbered equation.  
+* The *equation* environment lets \LaTeX know that what you are typing is math, so no `$`s are needed!  
+
+\vspace{1cm}
+
+\begin{verbatim}
+\begin{equation*}
+  1 = 3 - 2
+\end{equation*}
+\end{verbatim}
+
+\begin{equation*}
+  1 = 3 - 2
+\end{equation*}
+
+* This should produce a un-numbered equation.  
+* A `*` at the end of most \LaTeX commands (equation, section, align, etc.) will produce the un-numbered counterpart of the original. 
+
+\vspace{1cm}
+
+\begin{verbatim}
+\begin{align}
+  1 + 2 &= 3 \\
+  1 &= 3 - 2
+\end{align}
+\end{verbatim}
+
+\begin{align}
+  1 + 2 &= 3 \\
+  1 &= 3 - 2
+\end{align}
+
+* This should produce a two numbered equations, where the equal signs are aligned with each other.  
+
+    + The `&=` tells the \emph{align environment} what `=` to align (no spaces between `&` and `=`).   
+    + The `\\` tells the \emph{align environment} to break the line (you don't need a break on the last line). 
+    
+\pagebreak
+
+\begin{verbatim}
+\begin{align*}
+  f(x) &= x^2 \\
+  g(x) &= \frac{1}{x} \\
+  F(x) &= \int^a_b \frac{1}{3}x^3
+\end{align*}
+\end{verbatim}
+
+\begin{align*}
+  f(x) &= x^2\\
+  g(x) &= \frac{1}{x}\\
+  F(x) &= \int^a_b \frac{1}{3}x^3
+\end{align*}
+
+* This should produce three un-numbered equations, where the equal signs are aligned with each other.  
+
+    + The `\frac{}{}` command produces a fraction, where the first `{}` contains the numerator and the second `{}` contains the denominator.  
+    + The `\int` command produces an integral, where the bounds are specified as follows: `\int_{lower}^{upper}`.  
+
+\vspace{1cm}
+
+\begin{verbatim}    
+\begin{equation}
+\frac{1}{\sqrt{x}}
+\end{equation}
+\end{verbatim}
+
+\begin{equation}
+\frac{1}{\sqrt{x}}
+\end{equation}
+
+* This should produce a numbered equation.  
+
+    + The `\sqrt{} command produces a square root of the number in `{}`.   
+    + Note this second use of `\frac`, where the denominator contains *another* command!      
