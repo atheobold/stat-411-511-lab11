@@ -1,6 +1,5 @@
 ---
 title: "Reproducible Reports with RMarkdown"
-author: "Your Group's Names Here!"
 date: 'Due: November 19, 2019'
 output:
   pdf_document: default
