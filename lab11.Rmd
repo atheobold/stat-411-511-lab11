@@ -1,0 +1,13 @@
+---
+title: "Sports Analytics - SLR & MLR"
+author: "Your Group's Names Here!"
+date: "Due: November 19, 2019"
+output: html_document
+---
+
+Here are some things to start:
+
+Which player did the most rapidly climb the ranks through the years?
+Does the rank correlates with the money earn by the player?
+What can we find about the age?
+There is some deterministic factor to own the match?
